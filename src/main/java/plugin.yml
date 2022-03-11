@@ -1,0 +1,5 @@
+name: discord-webhooks
+description:
+version: 0.7.5
+author: naoufal
+main: live.naoufal.Pmon.Main
