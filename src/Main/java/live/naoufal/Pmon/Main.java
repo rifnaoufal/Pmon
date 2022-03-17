@@ -4,8 +4,16 @@ import club.minnced.discord.webhook.WebhookClient;
 import club.minnced.discord.webhook.WebhookClientBuilder;
 import club.minnced.discord.webhook.send.WebhookEmbed;
 import club.minnced.discord.webhook.send.WebhookEmbedBuilder;
+import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.core.DefaultDockerClientConfig;
+import com.github.dockerjava.core.DockerClientBuilder;
 
 public class Main {
+
+    DefaultDockerClientConfig clientConfig=DefaultDockerClientConfig.createDefaultConfigBuilder()
+            .withDockerHost("tcp://192.168.99.100").build();
+    DockerClient client= DockerClientBuilder.getInstance(clientConfig).build();
+
     public static void main (String[] args) {
         WebhookClientBuilder builder = new WebhookClientBuilder("https://discord.com/api/webhooks/951127407786614834/gUx-8ElAjs4JhEMmiaAaIphJSlDyh1f_t4BEGp5W1srJoyFME1p1xAXrQ0nUomnp-mej");
 
@@ -16,7 +24,7 @@ public class Main {
 
         WebhookEmbed embed = new WebhookEmbedBuilder()
                 .setColor(0xFF00EE)
-                .setDescription("Hello World")
+                .setDescription("Test")
                 .build();
         client.send(embed)
                 .thenAccept((message) -> System.out.printf("Message with embed has been sent [%s]%n", message.getId()));{
