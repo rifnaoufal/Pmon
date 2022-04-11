@@ -29,6 +29,7 @@ public class Main {
             .build();
     static DockerClient dockerClient = DockerClientImpl.getInstance(dockerClientConfig, dockerHttpClient);
 
+    //arraylist
     static List<String> containerNames = new ArrayList<>();
 
     public static void main(String[] args) {
