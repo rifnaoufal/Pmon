@@ -68,7 +68,7 @@ public class Main {
             }
         };
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-        executor.scheduleAtFixedRate(helloRunnable, 0, 3, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(helloRunnable, 0, 30, TimeUnit.SECONDS);
 
     }
 }
