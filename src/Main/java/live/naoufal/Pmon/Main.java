@@ -35,24 +35,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        containerNames.add("exciting_shaw");
-        WebhookClientBuilder builder = new WebhookClientBuilder("https://discord.com/api/webhooks/951127407786614834/gUx-8ElAjs4JhEMmiaAaIphJSlDyh1f_t4BEGp5W1srJoyFME1p1xAXrQ0nUomnp-mej");
-
-
-        builder.setWait(true);
-        WebhookClient webhookClient = WebhookClient.withUrl("https://discord.com/api/webhooks/951127407786614834/gUx-8ElAjs4JhEMmiaAaIphJSlDyh1f_t4BEGp5W1srJoyFME1p1xAXrQ0nUomnp-mej");
-
-        for (Container container : dockerClient.listContainersCmd().exec()) {
-            webhookClient.send(String.join(", ", container.getNames()));
-        }
-
-        for (Container container : Main.dockerClient.listContainersCmd().exec()) {
-                if ("running".equals(container.getState())) {
-                    dockerClient.inspectContainerCmd("exciting_shaw").exec();
-                    continue;
-                }
-        }
-
         Runnable helloRunnable = new Runnable() {
             @Override
             public void run() {
@@ -72,7 +54,6 @@ public class Main {
 
     }
 }
-//
 //        webhookClient.send("**Message**");
 //
 //                WebhookEmbed embed = new WebhookEmbedBuilder()
