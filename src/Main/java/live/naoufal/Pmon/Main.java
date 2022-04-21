@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
+
+
 public class Main {
 
     static DockerClientConfig dockerClientConfig = DefaultDockerClientConfig.createDefaultConfigBuilder()
@@ -54,12 +56,3 @@ public class Main {
 
     }
 }
-//        webhookClient.send("**Message**");
-//
-//                WebhookEmbed embed = new WebhookEmbedBuilder()
-//                .setColor(16711680)
-//                .setDescription("unhealthy :x:")
-//                .setImageUrl("https://media.istockphoto.com/vectors/design-of-red-wrong-mark-grunge-letter-xred-cross-sign-hand-drawn-vector-id1214857021?k=20&m=1214857021&s=612x612&w=0&h=vMllYNYlBX5rHw-5r0MS0gROSXokOcbQmGtvhVOWVEI=")
-//                .build();
-//                webhookClient.send(embed)
-//                .thenAccept((message) -> System.out.printf("Message with embed has been sent [%s]%n", message.getId()));
